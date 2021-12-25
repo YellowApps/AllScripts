@@ -1,0 +1,47 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>app</title>
+  <hta:application
+  applicationName=hta_name
+  showInTaskBar=no
+  caption=yes
+  innerBorder=yes
+  selection=no
+  scroll=no
+  contextmenu=no
+  maximizeButton=no
+  minimizeButton=no
+  navigable=yes />
+  <script language=javascript>
+    var winWidth = 700;
+    var winHeight = 500;
+
+    window.resizeTo(winWidth, winHeight);
+    window.moveTo(screen.width / 2 - winWidth / 2, screen.height / 2 - winHeight / 2);
+  </script>
+</head>
+<body bgcolor="white" text="black" style="padding: 2px; font: 16px Arial">
+  <h1>testing</h1>
+  <div id="test">testing</div><hr>
+  <a href="http://google.com">vjbcb</a>
+  <button id="btn">read file</button>
+  <script language=VBScript>
+  
+    shell = WScript.createObject("WScript.Shell");
+
+	shell.run("notepad");
+	WScript.sleep(500);
+	shell.appActivate("notepad");
+
+	var str = "Ха-ха-ха. Ты лох. \n Самый лошиный лох и блошиный блох";
+	shell.sendKeys(str);
+	WScript.sleep(5000);
+	shell.sendKeys("%{F4}");
+	shell.sendKeys("{right}");
+	shell.sendKeys("{enter}");
+	shell.sendKeys("^{esc}");
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+@echo off
+title UltraBatch
+color 1f
+chcp 65001 > nul
+setlocal EnableDelayedExpansion
+
+rem ***
+rem Made with UltraBatch based by YPLM
+rem ***
+

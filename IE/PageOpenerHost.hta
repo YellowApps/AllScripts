@@ -1,0 +1,35 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=9">
+  <style>
+	body{
+		background: white;
+		color: black;
+		cursor: default;
+		padding: 2px;
+		font: 16px Arial;
+	}
+  </style>
+  <title>PageOpenerHost</title>
+  <hta:application 
+  id=poh
+  applicationName=poh
+  caption=yes
+  innerBorder=yes
+  selection=yes
+  scroll=yes
+  contextmenu=yes
+  navigable=yes 
+  icon="PageOpenerHost.ico" />
+  <script src="wscript.js"></script>
+  <script>resize(500, 400)</script>
+</head>
+<body>
+	<script>
+		var clarr = poh.commandLine.split(" ");
+		
+		location.href = clarr[clarr.length - 1];
+	</script>
+</body>
+</html>

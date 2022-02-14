@@ -1,0 +1,5 @@
+Склепай-Шмотьё -Path . -Name test.txt -ШмотьёТип File
+Засунь-ЧёТамУТебя test.txt -Value "poshel hahooy"
+Гони-ЧёТамУТебя test.txt -Raw
+УбериНахер-Шмотьё file.txt -БезРазговоров
+Напиши-Нахер "OK"

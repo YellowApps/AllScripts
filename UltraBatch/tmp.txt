@@ -1,0 +1,17 @@
+Console.WriteLn Условия;
+
+Label 1;
+
+Console.WriteLn.;
+
+Console.ReadLn "n=Введите число: ";
+
+Console.Clear;
+
+If #n# lt 9 {
+Console.WriteLn Число меньше 9;
+} Else {
+Console.WriteLn Число больше 9;
+}
+
+GoToLabel 1;

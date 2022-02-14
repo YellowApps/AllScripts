@@ -1,0 +1,4 @@
+Clear-Host
+$null = CHCP 65001
+#Made with GopnikShell
+

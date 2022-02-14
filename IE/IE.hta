@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=9">
+  <style>
+	body{
+		background: white;
+		color: black;
+		cursor: default;
+		padding: 2px;
+		font: 16px Arial;
+	}
+  </style>
+  <title>Internet Explorer</title>
+  <hta:application 
+  id=osel
+  applicationName=osel
+  caption=yes
+  innerBorder=yes
+  selection=no
+  scroll=no
+  contextmenu=no
+  navigable=yes 
+  icon="IE.ico" />
+  <script src="wscript.js"></script>
+  <script>resize(550, 400)</script>
+</head>
+<body>
+	<input type="url" id="url" size=45 value="http://f0615718.xsph.ru/ProgramData/IE/"> <button onclick="main()">Go</button><br>
+	
+	<script>
+		var shell = WScript.CreateObject("WScript.Shell");
+		function main(){
+			shell.Run("PageOpenerHost.hta " + url.value);
+		}
+	</script>
+</body>
+</html>

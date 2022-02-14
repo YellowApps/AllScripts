@@ -2,25 +2,31 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=9">
+  <style>
+	body{
+		background: white;
+		color: black;
+		cursor: default;
+		padding: 2px;
+		font: 16px Arial;
+	}
+  </style>
   <title>app</title>
   <hta:application 
-  id=hta1
-  applicationName=hta1
+  id=app
+  applicationName=app
   caption=yes
   innerBorder=yes
   selection=no
   scroll=no
   contextmenu=no
   navigable=yes />
-  <script>
-    var winWidth = 700;
-    var winHeight = 500;
-
-    window.resizeTo(winWidth, winHeight);
-    window.moveTo(screen.width / 2 - winWidth / 2, screen.height / 2 - winHeight / 2);
-  </script>
+  <script src="wscript.js"></script>
+  <script>resize(500, 400)</script>
 </head>
-<body bgcolor="white" text="black" style="padding: 2px; font: 16px Arial">
-
+<body>
+	<script>
+		
+	</script>
 </body>
 </html>

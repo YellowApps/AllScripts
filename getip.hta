@@ -1,0 +1,61 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=9">
+  <style>
+	body{
+		background: white;
+		color: black;
+		cursor: default;
+		padding: 2px;
+		font: 16px Arial;
+	}
+  </style>
+  <title>Пробив по IP</title>
+  <hta:application 
+  id=getip
+  applicationName=getip
+  caption=yes
+  innerBorder=yes
+  selection=no
+  scroll=no
+  contextmenu=no
+  maximizeButton=no
+  border=dialog
+  navigable=yes />
+  <script src="wscript.js"></script>
+  <script>resize(500, 350)</script>
+</head>
+<body>
+	<h2>Пробив по IP</h2>
+	<input type="text" id="ip"> <button style="float: right; margin-bottom: 3px;" onclick="main()">Пробить</button>
+	<br><textarea rows=7 cols=36 id="out" style="clear: both;"></textarea>
+	<script>
+		function main(){
+			var xhr = WScript.CreateObject("Microsoft.XMLHTTP");
+			xhr.Open("GET", "http://ipinfo.io/" + ip.value + "/json", false);
+			xhr.Send(null);
+			
+			if(xhr.status == 200){
+				var json = JSON.parse(xhr.responseText);
+				
+				var text = "";
+				text += "IP: " + json.ip + "\n";
+				text += "Hostname: " + json.hostname + "\n";
+				text += "Координаты: " + json.loc + "\n";
+				text += "Город: " + json.city + "\n";
+				text += "Регион: " + json.region + "\n";
+				text += "Часовой пояс: " + json.timezone + "\n";
+				
+				out.innerHTML = text;
+			}else{
+				WScript.Echo("Ошибка \n\nКод: " + xhr.status + " (" + xhr.statusText + ")\n" +
+				"1) Проверьте подключение к Интернету.\n" +
+				"2) Проверьте настройки брандмауэра и антивируса.\n" +
+				"3) Проверьте корректность введённого IP.\n" +
+				"4) Попробуйте повторить запрос позже.");
+			}
+		}
+	</script>
+</body>
+</html>

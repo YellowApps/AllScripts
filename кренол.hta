@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=9">
+  <style>
+	td{
+		border: solid 1px black;
+	}
+  </style>
+  <title>app</title>
+  <hta:application 
+  id=hta1
+  applicationName=hta1
+  caption=yes
+  innerBorder=yes
+  selection=no
+  scroll=no
+  contextmenu=no
+  navigable=yes />
+  <script>
+    var winWidth = 400;
+    var winHeight = 400;
+
+    window.resizeTo(winWidth, winHeight);
+    window.moveTo(screen.width / 2 - winWidth / 2, screen.height / 2 - winHeight / 2);
+  </script>
+</head>
+<body bgcolor="white" text="black" style="padding: 2px; font: 16px Arial">
+	<script>
+		var text = "";
+		
+		for(var i = 0; i < 3; i++){
+			text += "<tr>";
+			for(var j = 0; j < 3; j++){
+				text += "<td id='c" + i + "" + j + "' onclick='click(" + i + "," + j + ")'>&nbsp;&nbsp;&nbsp;</td>";
+			}
+			text += "</tr>";
+		}
+		
+		echo("<table id='tbl' >" + text + "</table>");
+		
+		
+		
+		function click(x, y){
+			echo(x + " " + y);
+		}
+		
+		function echo(txt){
+			document.body.innerHTML += txt + "<br>";
+		}
+		
+		echo("<textarea rows=10 cols=30>" + tbl.innerHTML.split("<").join("&lt;").split(">").join("&gt;") + "</textarea>");
+	</script>
+</body>
+</html>

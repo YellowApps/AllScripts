@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=9">
+  <title>app</title>
+  <hta:application 
+  id=hta1
+  applicationName=hta1
+  caption=yes
+  innerBorder=yes
+  selection=no
+  scroll=no
+  contextmenu=no
+  navigable=yes />
+  <script>
+    var winWidth = 400;
+    var winHeight = 300;
+
+    window.resizeTo(winWidth, winHeight);
+    window.moveTo(screen.width / 2 - winWidth / 2, screen.height / 2 - winHeight / 2);
+  </script>
+</head>
+<body bgcolor="white" text="black" style="padding: 2px; font: 16px Arial">
+	Число: <input type="text" id="num">
+	<textarea id="out" cols=22 rows=5></textarea>
+	<script src="d:/folder/scripts/wscript.js"></script>
+	<script>
+		var number, str = "1";
+		
+		function echo(txt){
+			out.innerHTML += txt + "\n";
+		}
+		
+		num.onkeypress = function(e){
+			if(e.key == "Enter"){
+				out.innerHTML = "";
+				
+				number = +num.value;
+				
+				num.value = "";
+				
+				str = "1";
+				
+				for(var i = 2; i <= number; i++){
+					str += ("*" + i);
+				}
+				echo("Факториал числа " + number + ": " + eval(str));
+			}
+		}
+		
+		
+	</script>
+</body>
+</html>

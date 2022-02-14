@@ -1,0 +1,26 @@
+WScript.Shell PopUp('TEXT', Timeout, 'TITLE', Buttons+Icon)
+
+
+Buttons:
+	0: Ok
+	1: Ok + Cancel
+	2: Abort + Retry + Ignore
+	3: Yes + No + Cancel
+	4: Yes + No
+	5: Retry + Cancel
+
+Icon:
+	 0: пусто
+	16: ошибка          (X)
+	32: вопрос          (?)
+	48: предупреждение  <!>
+	64: информация      (i)
+
+Возврат:
+	1: Ok
+	2: Cancel
+	3: Abort
+	4: Retry
+	5: Ignore
+	6: Yes
+	7: No

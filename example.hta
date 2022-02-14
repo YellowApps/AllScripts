@@ -1,0 +1,39 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>app</title>
+  <hta:application 
+  id=app
+  applicationName=app
+  caption=yes
+  innerBorder=yes
+  selection=no
+  scroll=no
+  contextmenu=no
+  navigable=yes />
+  <script src="wscript.js"></script>
+  <script>
+    var winWidth = 700;
+    var winHeight = 500;
+
+    window.resizeTo(winWidth, winHeight);
+    window.moveTo(screen.width / 2 - winWidth / 2, screen.height / 2 - winHeight / 2);
+  </script>
+</head>
+<body bgcolor="white" text="black" style="padding: 2px; font: 16px Arial">
+	<textarea id="out"></textarea>
+	<button onclick="tmp()">Click me</button>
+	<script>
+		function tmp(){
+			var shell = WScript.CreateObject("WScript.Shell");
+			shell.Run("notepad");
+			WScript.Sleep(700);
+			shell.AppActivate("notepad");
+			shell.SendKeys("testing~the~hta~app");
+			WScript.Sleep(5000);
+			shell.SendKeys("%{F4}{RIGHT}~");
+		}
+	</script>
+</body>
+</html>

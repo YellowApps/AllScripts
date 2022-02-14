@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=9">
+  <style>
+	body{
+		background: white;
+		color: black;
+		cursor: default;
+		padding: 2px;
+		font: 16px Arial;
+	}
+  </style>
+  <title>app</title>
+  <hta:application 
+  id=app
+  applicationName=app
+  showInTaskbar=no
+  caption=no
+  sysMenu=no
+  innerBorder=yes
+  selection=no
+  scrolling=no
+  contextmenu=no
+  navigable=yes />
+  <script src="wscript.js"></script>
+  <script>resize(500, 400)</script>
+</head>
+<body>
+	<h2>Попробуйте закрыть</h2>
+	<button id="btn" tabindex="-1" style="left:100px; top:100px; position: absolute;" onclick="window.close()" onmousemove="moveBtn()">Закрыть</button>
+	<script>
+		function moveBtn(){
+			var x = Math.floor(Math.random()* winWidth - 102);
+			var y = Math.floor(Math.random()* winHeight - 102);
+			if(x > winWidth || y > winHeight || x < 0 || y < 0){ x = 0; y = 0; }
+			btn.style.left = x + "px";
+			btn.style.top = y + "px";
+			
+		}
+	</script>
+</body>
+</html>
